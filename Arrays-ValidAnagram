@@ -1,0 +1,25 @@
+   def isAnagram(self, s, t):
+        "3rd way and efficient way"
+        if len(s) != len(t):
+            return False
+        dicts = {}
+        dictt = {}
+        for i in range(len(s)):
+            dicts[s[i]] = 1+dicts.get(s[i],0)
+            dictt[t[i]] = 1+dictt.get(t[i],0)
+        for i in dicts:
+            if dicts[i] != dictt.get(i,0):
+                return False
+        return True           
+
+        "2nd Way"
+        # return sorted(s) == sorted(t)
+
+        '1 way'
+        # s = list(s)
+        # s.sort()
+        # t = list(t)
+        # t.sort()
+        # if s == t:
+        #     return True
+        # return False
